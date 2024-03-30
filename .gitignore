@@ -1,6 +1,6 @@
 node_modules
 test/*
-!test/test.http
+!test/.gitkeep
 public/data/*
 !public/data/.gitkeep
 public/images/*
