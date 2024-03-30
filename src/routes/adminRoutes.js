@@ -1,0 +1,12 @@
+const router = require('express').Router();
+const adminValidate = require("../api/validations/adminValidator");
+const controller = require('../api/controllers/adminController');
+const authorize = require("../middlewares/authorize");
+router.get('/user', authorize(['admin']), controller.getAllUser);
+router.get('/user/address', authorize(['admin']), adminValidate.onlyId, controller.getUserAddress);
+router.get('/category', authorize(['admin']), controller.getAllCategory);
+router.post('/category', authorize(['admin']), adminValidate.addCategory, controller.addCategory);
+router.patch('/category', authorize(['admin']), adminValidate.updateCategory, controller.updateCategory);
+router.delete('/category', authorize(['admin']), adminValidate.onlyId, controller.deleteCategory);
+router.get('/item', authorize(['admin']), controller.getAllItem);
+module.exports = router;

@@ -1,0 +1,10 @@
+node_modules
+test/*
+!test/test.http
+public/data/*
+!public/data/.gitkeep
+public/images/*
+!public/images/.gitkeep
+prisma/migrations
+.idea
+.env
